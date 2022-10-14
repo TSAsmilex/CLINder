@@ -4,10 +4,21 @@
  */
 package com.tsystems;
 
+import java.util.HashMap;
+import java.util.PriorityQueue;
+
 /**
  *
  * @author juacuadr
  */
 public class CLInder {
-    
+    private HashMap<User, PriorityQueue<Interests>> userMapSession;
+
+    public CLInder() {
+        this.userMapSession = new HashMap<>();
+    }
+
+    public HashMap<User, PriorityQueue<Interests>> getUserMapSession() {
+        return userMapSession;
+    }
 }

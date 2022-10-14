@@ -11,7 +11,7 @@ import java.io.FileInputStream;
  *
  * @author juacuadr
  */
-public enum Gustos {
+public enum Interests {
     
     MUSIC, MOVIE, SPORT, TRAVEL, READ, DRAW, PHOTOGRAF, ANIMALS, PARTYS, GAMES, TECNOLOGY, OUTFIT;
     
