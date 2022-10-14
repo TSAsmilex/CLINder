@@ -2,14 +2,15 @@ package com.tsystems;
 
 import java.util.InputMismatchException;
 
+
 /**
- * Hello world!
- *
+ * The main entrypoint of the application.
+ * @version 1.0
  */
 public class App
 {
     private static UI ui = new UI();
-    private static CLInder clinder = new CLInder();
+    private static CLInder clinder;
 
     private static User user         = null;
     private static UserDB userDB     = new UserDB();
@@ -18,6 +19,16 @@ public class App
 
     public static void main( String[] args )
     {
+        try {
+            userDB.loadDB();
+        }
+        catch(Exception e) {
+            ui.printError(e);
+            System.exit(1);
+        }
+
+        clinder = new CLInder(userDB.getUsers());
+
         var option = MenuOptions.NOOP;
         Exception error = null;
 

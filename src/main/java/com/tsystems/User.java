@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class User {
-
+    
     private int id;
     private String name;
     private String username;
@@ -20,11 +20,10 @@ public class User {
 
     private static int nextId = 1;
 
-    /**
-     * Default constructor method
-     */
-    public User() {
-
+    public User (String username, String hashedPassword) {
+        this.id             = nextId++;
+        this.username       = username;
+        this.hashedPassword = hashedPassword;
     }
 
     /**
@@ -39,12 +38,12 @@ public class User {
      */
     public User(String name, String username, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interests> hobbies) {
         this.id = User.nextId++;
-        this.name = name;
-        this.username = username;
-        this.gender = gender;
-        this.orientation = orientation;
+        this.name           = name;
+        this.username       = username;
+        this.gender         = gender;
+        this.orientation    = orientation;
         this.hashedPassword = hashedPassword;
-        this.hobbies = hobbies;
+        this.hobbies        = hobbies;
     }
 
     /**
@@ -64,6 +63,7 @@ public class User {
     public String getName() {
         return name;
     }
+
 
     public String getUsername() {
         return username;
@@ -89,7 +89,7 @@ public class User {
 
     /**
      * setHashedPassword
-     *
+     * 
      * @param hashedPassword
      */
     public void setHashedPassword(String hashedPassword) {
