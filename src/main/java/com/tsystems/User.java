@@ -2,20 +2,19 @@ package com.tsystems;
 
 
 public class User {
-    // dni, name
-    private String dni;
     private String name;
     private String hashedPassword;
 
+    private static int id = 0;
 
     public User(String name, String dni, String hashedPassword){
+        this.id++;
         this.name = name;
-        this.dni  = dni;
         this.hashedPassword=hashedPassword;
     }
 
-    public String getDni() {
-        return dni;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -23,9 +22,6 @@ public class User {
     }
     public String getHashedPassword() {
         return hashedPassword;
-    }
-    public void setDni(String dni) {
-        this.dni = dni;
     }
 
     public void setName(String name) {
@@ -42,7 +38,7 @@ public class User {
         }
 
         User o = (User) obj;
-        return o.getDni().equals(dni) && o.getName().equals(name);
+        return o.getId() == id && o.getName().equals(name);
     }
 
 }
