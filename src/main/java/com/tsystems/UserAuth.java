@@ -1,7 +1,5 @@
 package com.tsystems;
 
-
-import java.util.Scanner;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
