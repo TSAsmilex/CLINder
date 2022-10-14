@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -35,6 +36,7 @@ public class UserDB {
         return users;
     }
 
+
     public boolean loadDB() throws FileNotFoundException, IOException {
         File csvFile = new File(UserDB.DB_FILEPATH);
 
@@ -46,13 +48,16 @@ public class UserDB {
             String line;
 
             while ((line = br.readLine()) != null) {
-                String[] taskString = line.split(";");
+                String[] userString = line.split(";");
 
-                User user = new User(
-                    taskString[0],//name
-                    taskString[1],//dni
-                    taskString[2]//password
-                );
+                String              username       = userString[0];
+                String              hashedPassword = userString[1];
+                String              name           = userString[2];
+                Gender              gender         = Gender.fromString(userString[3]);
+                SexualOrientation   orientation    = SexualOrientation.fromString(userString[4]);
+                ArrayList<Interest> hobbies        = Interest.parseInterestList(userString[5]);
+
+                User user = new User(name, username, gender, orientation, hashedPassword, hobbies);
 
                 this.users.add(user);
             }
@@ -65,7 +70,16 @@ public class UserDB {
     public boolean writeDB() throws IOException {
         String output = this.users.stream()
             .map(user -> new String (
-                user.getName() + ";" + user.getDni() + ";" + user.getHashedPassword()
+                    user.getUsername() + ";"
+                +   user.getHashedPassword() + ";"
+                +   user.getName() + ";"
+                +   user.getGender().toString() + ";"
+                +   user.getOrientation().toString() + ";"
+                +   user.getHobbies()
+                        .stream()
+                        .map(interest -> interest.toString())
+                        .collect(Collectors.joining(","))
+                    + ";"
             )).collect(Collectors.joining("\n"));
 
         File csvFile = new File(UserDB.DB_FILEPATH);

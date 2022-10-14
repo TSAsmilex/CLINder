@@ -9,14 +9,15 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class User {
-    
+
     private int id;
-    private String name;
     private String username;
+    private String hashedPassword;
+
+    private String name;
     private Gender gender;
     private SexualOrientation orientation;
-    private String hashedPassword;
-    private ArrayList<Interests> hobbies;
+    private ArrayList<Interest> hobbies;
 
     private static int nextId = 1;
 
@@ -30,13 +31,13 @@ public class User {
      * Constructor method
      *
      * @param name of the user
-     * @param username is only param for 
+     * @param username is only param for
      * @param gender of the user
      * @param orientation of the user
      * @param hashedPassword of the user
      * @param hobbies is ArryaList of the hobbies
      */
-    public User(String name, String username, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interests> hobbies) {
+    public User(String name, String username, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interest> hobbies) {
         this.id = User.nextId++;
         this.name           = name;
         this.username       = username;
@@ -64,7 +65,6 @@ public class User {
         return name;
     }
 
-
     public String getUsername() {
         return username;
     }
@@ -89,7 +89,7 @@ public class User {
 
     /**
      * setHashedPassword
-     * 
+     *
      * @param hashedPassword
      */
     public void setHashedPassword(String hashedPassword) {
@@ -108,7 +108,7 @@ public class User {
         return orientation;
     }
 
-    public ArrayList<Interests> getHobbies() {
+    public ArrayList<Interest> getHobbies() {
         return hobbies;
     }
 
