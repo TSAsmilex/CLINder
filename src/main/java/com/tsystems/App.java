@@ -2,9 +2,10 @@ package com.tsystems;
 
 import java.util.InputMismatchException;
 
+
 /**
- * Hello world!
- *
+ * The main entrypoint of the application.
+ * @version 1.0
  */
 public class App
 {

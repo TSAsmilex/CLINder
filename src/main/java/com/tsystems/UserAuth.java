@@ -5,6 +5,11 @@ import java.security.MessageDigest;
 
 import javax.security.auth.login.LoginException;
 
+/**
+ * The systems in charge of handling the login and registration of users.
+ * 
+ * @version 1.0
+ */
 public class UserAuth {
     private UserDB userDB;
 
