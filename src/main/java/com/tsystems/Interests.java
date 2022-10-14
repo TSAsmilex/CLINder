@@ -4,8 +4,6 @@
  */
 package com.tsystems;
 
-import java.awt.Dialog;
-import java.io.FileInputStream;
 
 /**
  *
