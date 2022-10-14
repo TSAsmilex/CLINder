@@ -12,6 +12,7 @@ public class User {
 
     private int id;
     private String name;
+    private String userName;
     private Gender gender;
     private SexualOrientation orientation;
     private String hashedPassword;
@@ -35,9 +36,10 @@ public class User {
      * @param hashedPassword of the user
      * @param hobbies is ArryaList of the hobbies
      */
-    public User(String name, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interests> hobbies) {
+    public User(String name, String userName, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interests> hobbies) {
         this.id = User.nextId++;
         this.name = name;
+        this.userName=userName;
         this.gender = gender;
         this.orientation = orientation;
         this.hashedPassword = hashedPassword;
@@ -45,33 +47,56 @@ public class User {
     }
 
     /**
-     *getId is method get
+     * getId
+     *
      * @return id
      */
     public int getId() {
         return id;
     }
 
-        /**
-     *getName is method get
+    /**
+     * getName
+     *
      * @return name
      */
     public String getName() {
         return name;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+    
+    /**
+     * getHashedPassword
+     *
+     * @return hashedPassword
+     */
     public String getHashedPassword() {
         return hashedPassword;
     }
 
+    /**
+     * setName
+     * @param name of the user for change
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+    
+    /**
+     * setHashedPassword
+     * @param hashedPassword 
+     */
     public void setHashedPassword(String hashedPassword) {
         this.hashedPassword = hashedPassword;
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
     public Gender getGender() {
         return gender;
     }
