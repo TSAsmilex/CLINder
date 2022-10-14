@@ -31,6 +31,10 @@ public class UserDB {
     }
 
 
+    public HashSet<User> getUsers() {
+        return users;
+    }
+
     public boolean loadDB() throws FileNotFoundException, IOException {
         File csvFile = new File(UserDB.DB_FILEPATH);
 
