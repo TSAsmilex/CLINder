@@ -9,10 +9,9 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class User {
-
     private int id;
     private String name;
-    private String userName;
+    private String username;
     private Gender gender;
     private SexualOrientation orientation;
     private String hashedPassword;
@@ -20,11 +19,10 @@ public class User {
 
     private static int nextId = 1;
 
-    /**
-     * Default constructor method
-     */
-    public User() {
-
+    public User (String username, String hashedPassword) {
+        this.id             = nextId++;
+        this.username       = username;
+        this.hashedPassword = hashedPassword;
     }
 
     /**
@@ -36,14 +34,14 @@ public class User {
      * @param hashedPassword of the user
      * @param hobbies is ArryaList of the hobbies
      */
-    public User(String name, String userName, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interests> hobbies) {
+    public User(String name, String username, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interests> hobbies) {
         this.id = User.nextId++;
-        this.name = name;
-        this.userName=userName;
-        this.gender = gender;
-        this.orientation = orientation;
+        this.name           = name;
+        this.username       = username;
+        this.gender         = gender;
+        this.orientation    = orientation;
         this.hashedPassword = hashedPassword;
-        this.hobbies = hobbies;
+        this.hobbies        = hobbies;
     }
 
     /**
@@ -65,9 +63,9 @@ public class User {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
-    
+
     /**
      * getHashedPassword
      *
@@ -84,18 +82,18 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
      * setHashedPassword
-     * @param hashedPassword 
+     * @param hashedPassword
      */
     public void setHashedPassword(String hashedPassword) {
         this.hashedPassword = hashedPassword;
     }
-    
+
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
     public Gender getGender() {
         return gender;
