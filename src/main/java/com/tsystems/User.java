@@ -2,13 +2,14 @@ package com.tsystems;
 
 
 public class User {
+    private int id;
     private String name;
     private String hashedPassword;
-
-    private static int id = 0;
+    
+    private static int nextId = 1;
 
     public User(String name, String dni, String hashedPassword){
-        this.id++;
+        this.id = User.nextId++;
         this.name = name;
         this.hashedPassword=hashedPassword;
     }
