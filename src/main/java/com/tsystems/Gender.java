@@ -4,15 +4,12 @@
  */
 package com.tsystems;
 
-import java.awt.Dialog;
-import java.io.FileInputStream;
+import javax.naming.ldap.ManageReferralControl;
 
 /**
  *
- * @author juacuadr
+ * @author ramaldon
  */
-public enum Interests {
-    
-    MUSIC, MOVIE, SPORT, TRAVEL, READ, DRAW, PHOTOGRAPHY, ANIMALS, PARTYS, GAMES, TECNOLOGY, OUTFIT;
-    
+public enum Gender {
+    MAN, WOMAN, NB
 }

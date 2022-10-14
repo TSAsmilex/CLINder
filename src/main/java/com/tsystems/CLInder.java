@@ -21,4 +21,6 @@ public class CLInder {
     public HashMap<User, PriorityQueue<Interests>> getUserMapSession() {
         return userMapSession;
     }
+    
+    
 }

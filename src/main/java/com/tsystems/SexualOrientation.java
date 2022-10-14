@@ -4,15 +4,12 @@
  */
 package com.tsystems;
 
-import java.awt.Dialog;
-import java.io.FileInputStream;
-
 /**
  *
- * @author juacuadr
+ * @author ramaldon
  */
-public enum Interests {
+public enum SexualOrientation {
     
-    MUSIC, MOVIE, SPORT, TRAVEL, READ, DRAW, PHOTOGRAPHY, ANIMALS, PARTYS, GAMES, TECNOLOGY, OUTFIT;
+    HETEROSEXUAL, HOMOSEXUAL, BISEXUAL
     
 }
