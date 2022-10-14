@@ -12,7 +12,7 @@ public class User {
 
     private int id;
     private String name;
-    private String userName;
+    private String username;
     private Gender gender;
     private SexualOrientation orientation;
     private String hashedPassword;
@@ -31,15 +31,16 @@ public class User {
      * Constructor method
      *
      * @param name of the user
+     * @param username is only param for 
      * @param gender of the user
      * @param orientation of the user
      * @param hashedPassword of the user
      * @param hobbies is ArryaList of the hobbies
      */
-    public User(String name, String userName, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interests> hobbies) {
+    public User(String name, String username, Gender gender, SexualOrientation orientation, String hashedPassword, ArrayList<Interests> hobbies) {
         this.id = User.nextId++;
         this.name = name;
-        this.userName=userName;
+        this.username = username;
         this.gender = gender;
         this.orientation = orientation;
         this.hashedPassword = hashedPassword;
@@ -64,10 +65,10 @@ public class User {
         return name;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
-    
+
     /**
      * getHashedPassword
      *
@@ -79,23 +80,25 @@ public class User {
 
     /**
      * setName
+     *
      * @param name of the user for change
      */
     public void setName(String name) {
         this.name = name;
     }
-    
+
     /**
      * setHashedPassword
-     * @param hashedPassword 
+     *
+     * @param hashedPassword
      */
     public void setHashedPassword(String hashedPassword) {
         this.hashedPassword = hashedPassword;
     }
-    
+
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
     public Gender getGender() {
         return gender;
