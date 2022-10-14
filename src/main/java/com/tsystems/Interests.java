@@ -8,6 +8,6 @@ package com.tsystems;
  *
  * @author juacuadr
  */
-public enum Gustos {
+public enum Interests {
     
 }
