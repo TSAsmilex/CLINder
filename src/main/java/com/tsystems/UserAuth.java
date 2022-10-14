@@ -9,7 +9,6 @@ import javax.security.auth.login.LoginException;
 
 public class UserAuth {
     private UserDB userDB;
-    private Scanner scan = new Scanner(System.in);
 
 
     public UserAuth(UserDB userDB) {
@@ -17,14 +16,7 @@ public class UserAuth {
     }
 
 
-    public User login () throws LoginException {
-        System.out.println("What's your NIF?");
-        System.out.print("> ");
-        String dni = scan.nextLine();
-
-        System.out.println("Password for " + dni + ":");
-        System.out.print("> ");
-        String password = scan.nextLine();
+    public User login (String dni, String password) throws LoginException {
         String hashedPassword = getSHA512(password);
 
         User user = null;
@@ -40,18 +32,7 @@ public class UserAuth {
     }
 
 
-    public User registerUser() throws LoginException {
-        System.out.println("What's your name?");
-        System.out.print("> ");
-        String name = scan.nextLine();
-
-        System.out.println("What's your NIF?");
-        System.out.print("> ");
-        String dni = scan.nextLine();
-
-        System.out.println("Provide your password:");
-        System.out.print("> ");
-        String password = scan.nextLine();
+    public User registerUser(String name, String dni, String password) throws LoginException {
         String hashedPassword = getSHA512(password);
 
         User user = new User(name, dni, hashedPassword);
