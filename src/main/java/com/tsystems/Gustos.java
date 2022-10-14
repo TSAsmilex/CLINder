@@ -4,10 +4,15 @@
  */
 package com.tsystems;
 
+import java.awt.Dialog;
+import java.io.FileInputStream;
+
 /**
  *
  * @author juacuadr
  */
 public enum Gustos {
+    
+    MUSIC, MOVIE, SPORT, TRAVEL, READ, DRAW, PHOTOGRAF, ANIMALS, PARTYS, GAMES, TECNOLOGY, OUTFIT;
     
 }
